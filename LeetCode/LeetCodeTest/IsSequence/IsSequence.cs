@@ -8,9 +8,23 @@ namespace LeetCodeTest.IsSequence
 {
     internal class IsSequence
     {
-        internal bool IsSequenceFn(string input1, string input2)
+        internal bool IsSubsequenceFn(string s, string t)
         {
-            return true;
+            if (s.Length == 0) return true;
+            if (s.Length == t.Length) return t == s;
+            if (s.Length > t.Length) return false;
+            for (int i = 0, j = 0; i < t.Length; i++)
+            {
+                if (t[i] == s[j])
+                {
+                    j++;
+                    if (s.Length == j)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

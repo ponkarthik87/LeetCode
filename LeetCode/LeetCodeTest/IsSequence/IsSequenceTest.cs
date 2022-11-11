@@ -15,7 +15,7 @@ namespace LeetCodeTest.IsSequence
         public void IsSequenceTestInitialTest(string input1, string input2, bool expected)
         {
             IsSequence isSequence = new();
-            var actual = isSequence.IsSequenceFn(input1, input2);
+            var actual = isSequence.IsSubsequenceFn(input1, input2);
             actual.Should().Be(expected);
         }
     }
