@@ -11,10 +11,10 @@ namespace LeetCodeTest.LengthOfLongestSubArray
     {
         [Theory]
         [ClassData(typeof(LengthOfLongestSubArrayTestData))]
-        public void PairSumEqualInitialTest(int[] input, int target, int expected)
+        public void LengthOfLongestSubArrayInitialTest(int[] input, int target, int expected)
         {
-            LengthOfLongestSubArray pairSumEqual = new();
-            var actual = pairSumEqual.LengthOfLongestSubArrayFn(input, target);
+            LengthOfLongestSubArray lengthOfLongestSubArray = new();
+            var actual = lengthOfLongestSubArray.LengthOfLongestSubArrayFn(input, target);
             actual.Should().Be(expected);
         }
     }

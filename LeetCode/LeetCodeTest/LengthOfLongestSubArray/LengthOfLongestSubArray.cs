@@ -14,24 +14,44 @@ namespace LeetCodeTest.LengthOfLongestSubArray
             var right = 0;
             var sum = 0;
             var length = 0;
-            var finallength = 0;
+            var finalLength = 0;
             while (right < nums.Length)
             {
-                if (sum <= k)
+                if (k >= sum)
                 {
                     sum += nums[right];
                     right++;
                     length++;
+                    finalLength = finalLength > length ? finalLength : length;
                 }
                 else
                 {
-                    finallength = length;
-                    
+                    length--;
+                    sum -= nums[left];
+                    left++;
                 }
             }
 
+            return finalLength - 1;
+        }
+        
+        internal int LengthOfLongestSubArrayFn1(int[] nums, int k)
+        {
+            var left = 0;
+            var curr = 0;
+            var ans = 0;
 
-            return 1;
+            for (var right = 0; right < nums.Length; right++) {
+                curr += nums[right];
+                while (curr > k) {
+                    curr -= nums[left];
+                    left++;
+                }
+
+                ans = Math.Max(ans, right - left + 1);
+            }
+
+            return ans;
         }
     }
 }
