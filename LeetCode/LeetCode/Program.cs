@@ -1,10 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-using System.Collections.Generic;
 using BenchmarkDotNet.Running;
-using LeetCode.Helpers;
-using LeetCodeTest.ReverseStringInPlace;
+using LeetCodeTest.ArraysAndStrings.ReverseStringInPlace;
 
 
 BenchmarkRunner.Run<ReverseStringInPlaceBenchmarks>();
